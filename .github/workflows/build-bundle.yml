@@ -51,3 +51,9 @@ jobs:
       - name: install dependencies
         run: |
           pip install bleak bleak-winrt
+      - name: build bundle
+        run: |
+          cd build-common
+          python3 bundle.py -w $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+          cd ..
+          dir
