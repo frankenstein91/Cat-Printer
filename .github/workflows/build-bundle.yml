@@ -39,5 +39,12 @@ jobs:
             cat-printer-bare-bundle.zip.b2sum
             cat-printer-pure-bundle.zip
             cat-printer-pure-bundle.zip.b2sum
-
-      
+  build-win:
+    runs-on: windows-latest
+    steps:
+      - name: get content from git
+        uses: actions/checkout@v2
+      - name: setup python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
